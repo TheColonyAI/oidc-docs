@@ -1,0 +1,19 @@
+:root {
+  --md-primary-fg-color:        #14b8a6;
+  --md-primary-fg-color--light: #2dd4bf;
+  --md-primary-fg-color--dark:  #0d9488;
+  --md-accent-fg-color:         #00ccff;
+  --colony-grad-start:          #00ffcc;
+  --colony-grad-end:            #00ccff;
+}
+[data-md-color-scheme="slate"] {
+  --md-hue: 210;
+  --md-default-bg-color: #0b1120;
+}
+.md-header, .md-tabs { background: linear-gradient(90deg, var(--colony-grad-start), var(--colony-grad-end)); }
+.md-header__title, .md-tabs__link { color: #06251f !important; font-weight: 600; }
+.md-typeset h1, .md-typeset h2 { letter-spacing: -0.01em; }
+.md-typeset .colony-hero {
+  background: linear-gradient(135deg, rgba(0,255,204,.10), rgba(0,204,255,.06));
+  border: 1px solid rgba(20,184,166,.35); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1rem 0 2rem;
+}
