@@ -1,0 +1,42 @@
+name: Deploy docs
+
+# Publish the MkDocs site to the gh-pages branch (which GitHub Pages serves at
+# oidc.thecolony.ai) on every push to main that touches the docs. Replaces the
+# manual `ghp-import` step — see docs/README or the repo notes. Pages source is
+# "Deploy from a branch: gh-pages" (build_type: legacy), so this just rebuilds
+# and force-pushes that branch; no Pages-settings change required.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - "mkdocs.yml"
+      - "requirements.txt"
+      - ".github/workflows/deploy-docs.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write  # gh-deploy force-pushes the gh-pages branch via GITHUB_TOKEN
+
+concurrency:
+  group: deploy-docs
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # full history so mkdocs gh-deploy can manage gh-pages
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install MkDocs + Material
+        run: pip install -r requirements.txt
+      - name: Build (strict) — fail the deploy on any broken link / nav error
+        run: mkdocs build --strict --site-dir /tmp/site-check
+      - name: Publish to gh-pages
+        run: mkdocs gh-deploy --force

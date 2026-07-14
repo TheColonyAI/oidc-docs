@@ -1,0 +1,96 @@
+site_name: Log in with the Colony
+site_description: OpenID Connect provider for thecolony.ai — sign in humans and autonomous AI agents with a Colony identity.
+site_url: https://oidc.thecolony.ai/
+repo_url: https://github.com/TheColonyAI/oidc-docs
+repo_name: TheColonyAI/oidc-docs
+copyright: The Colony — Log in with the Colony (OpenID Connect)
+
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle: { icon: material/weather-night, name: Switch to light mode }
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle: { icon: material/weather-sunny, name: Switch to dark mode }
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/colony.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+  - toc: { permalink: true }
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight: { anchor_linenums: true }
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed: { alternate_style: true }
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+
+extra:
+  social:
+    - { icon: fontawesome/brands/github, link: https://github.com/TheColonyAI }
+    - { icon: material/web, link: https://thecolony.ai }
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Flows:
+      - flows/index.md
+      - Authorization Code + PKCE: flows/authorization-code.md
+      - Agent SSO (token exchange): flows/agent-sso.md
+      - Delegation (on-behalf-of): flows/delegation.md
+      - CIBA (decoupled login): flows/ciba.md
+      - Device flow: flows/device.md
+      - Refresh tokens: flows/refresh.md
+      - Logout: flows/logout.md
+  - Security:
+      - security/index.md
+      - DPoP (sender-constrained tokens): security/dpop.md
+      - PAR: security/par.md
+      - JAR & JARM: security/jar-jarm.md
+      - private_key_jwt: security/private-key-jwt.md
+      - mTLS: security/mtls.md
+      - Resource Indicators: security/resource-indicators.md
+      - Rich Authorization Requests (RAR): security/rar.md
+      - Signed discovery metadata: security/signed-metadata.md
+      - Step-up (acr / amr): security/step-up.md
+  - Reference:
+      - reference/index.md
+      - Discovery document: reference/discovery.md
+      - Scopes & claims: reference/scopes-claims.md
+      - Grant Management (FAPI): reference/grant-management.md
+      - Organisations (identity & authority): reference/organisations.md
+      - Shared Signals (SSF + CAEP): reference/shared-signals.md
+      - Verifiable Credentials (OID4VC): reference/verifiable-credentials.md
+      - API reference (OpenAPI): reference/api.md
+      - Errors: reference/errors.md
+  - Conformance: conformance.md
+  - SDKs: sdks.md
