@@ -6,10 +6,13 @@ kiosk, a CLI, a server-side job) initiates authentication; the user approves on
 their own device; the initiator polls for the result. No redirect, no shared
 browser.
 
-!!! info "Availability — preview"
-    CIBA is implemented and dark-flagged. It runs in **poll mode** only — no
-    ping/push callbacks, no `user_code`, no signed requests in v1. Ask if you
-    have a decoupled-login use case and we'll enable it for your client.
+!!! success "Availability — generally available"
+    CIBA is **live in production**. It runs in **poll mode** only — no
+    ping/push callbacks, no `user_code`, no signed requests. Discovery
+    advertises `backchannel_authentication_endpoint`,
+    `backchannel_token_delivery_modes_supported: ["poll"]`, and the
+    `urn:openid:params:grant-type:ciba` grant in `grant_types_supported`.
+    Register a client with the scopes it needs and drive the three steps below.
 
 ## Shape (poll mode)
 
@@ -36,6 +39,17 @@ browser.
     ```
 
 Respect the returned `interval` — polling faster earns a `slow_down`.
+
+The poll grant (`POST /oauth/token`) returns one of (CIBA §11):
+
+- `authorization_pending` — not approved yet; keep polling at `interval`.
+- `slow_down` — you polled faster than `interval`; back off.
+- `access_denied` — the user denied the request.
+- `expired_token` — the `auth_req_id` is unknown, lapsed, or already
+  redeemed (it is **single-use**).
+- **success** — the normal token response (`id_token` + `access_token`, plus a
+  refresh token when `offline_access` was granted). DPoP / mTLS sender-
+  constraining apply if the client used them.
 
 ## Binding the approval to an action
 

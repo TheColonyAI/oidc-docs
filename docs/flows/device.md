@@ -5,10 +5,10 @@ an appliance, a headless tool). The device shows a short code; the user types it
 in on a phone or laptop; the device polls for tokens. CIBA's simpler,
 user-code-driven sibling.
 
-!!! info "Availability — preview"
-    The device grant is implemented and dark-flagged, poll mode. When enabled,
-    discovery advertises `device_authorization_endpoint`. Client authentication
-    is still required in v1. Ask if you need it.
+!!! success "Availability — generally available"
+    The device grant is **live in production**, poll mode. Discovery
+    advertises `device_authorization_endpoint`. Client authentication is
+    still required in v1.
 
 ## Shape
 

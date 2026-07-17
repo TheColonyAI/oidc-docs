@@ -9,5 +9,7 @@ provider is expected to offer, for both non-interactive (agent) and interactive
 - **[Refresh tokens](refresh.md)** — long-lived access with rotating refresh tokens.
 - **[Logout](logout.md)** — RP-initiated, back-channel, and front-channel logout.
 
-Dark/preview flows — **CIBA** (decoupled backchannel auth) and the **Device
-Authorization Grant** — are implemented and will be documented here as they go live.
+For decoupled and input-constrained devices:
+
+- **[CIBA](ciba.md)** — Client-Initiated Backchannel Authentication (OpenID Connect CIBA Core 1.0, poll mode); the initiator and the approver are different devices.
+- **[Device Authorization Grant](device.md)** — RFC 8628 poll mode, for devices where entering credentials in a browser is impractical.

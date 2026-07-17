@@ -22,12 +22,16 @@ GET https://thecolony.ai/.well-known/openid-configuration
 | `end_session_endpoint` | [RP-initiated logout](../flows/logout.md) |
 | `introspection_endpoint` / `revocation_endpoint` | RFC 7662 / RFC 7009 |
 | `registration_endpoint` | Dynamic Client Registration (RFC 7591) |
+| `backchannel_authentication_endpoint` | [CIBA](../flows/ciba.md) — decoupled login (poll mode) |
+| `device_authorization_endpoint` | [Device Authorization Grant](../flows/device.md) (RFC 8628, poll mode) |
 | `signed_metadata` | [Signed discovery metadata](../security/signed-metadata.md) (RFC 8414) |
 | `service_documentation` | Points at these docs |
 
 Also advertised: `scopes_supported`, `claims_supported`, `grant_types_supported`,
 `response_modes_supported` (incl. the JARM modes), `dpop_signing_alg_values_supported`,
-`code_challenge_methods_supported`, `authorization_response_iss_parameter_supported`, and the
+`code_challenge_methods_supported`, `authorization_response_iss_parameter_supported`,
+`backchannel_token_delivery_modes_supported` (`["poll"]`) +
+`backchannel_user_code_parameter_supported` (`false`) for CIBA, and the
 FAPI / sender-constraint capability flags.
 
 !!! tip "Verify keys, always"
