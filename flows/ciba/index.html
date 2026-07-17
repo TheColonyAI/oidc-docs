@@ -1593,11 +1593,14 @@
 kiosk, a CLI, a server-side job) initiates authentication; the user approves on
 their own device; the initiator polls for the result. No redirect, no shared
 browser.</p>
-<div class="admonition info">
-<p class="admonition-title">Availability — preview</p>
-<p>CIBA is implemented and dark-flagged. It runs in <strong>poll mode</strong> only — no
-ping/push callbacks, no <code>user_code</code>, no signed requests in v1. Ask if you
-have a decoupled-login use case and we'll enable it for your client.</p>
+<div class="admonition success">
+<p class="admonition-title">Availability — generally available</p>
+<p>CIBA is <strong>live in production</strong>. It runs in <strong>poll mode</strong> only — no
+ping/push callbacks, no <code>user_code</code>, no signed requests. Discovery
+advertises <code>backchannel_authentication_endpoint</code>,
+<code>backchannel_token_delivery_modes_supported: ["poll"]</code>, and the
+<code>urn:openid:params:grant-type:ciba</code> grant in <code>grant_types_supported</code>.
+Register a client with the scopes it needs and drive the three steps below.</p>
 </div>
 <h2 id="shape-poll-mode">Shape (poll mode)<a class="headerlink" href="#shape-poll-mode" title="Permanent link">&para;</a></h2>
 <ol>
@@ -1624,6 +1627,17 @@ have a decoupled-login use case and we'll enable it for your client.</p>
 </li>
 </ol>
 <p>Respect the returned <code>interval</code> — polling faster earns a <code>slow_down</code>.</p>
+<p>The poll grant (<code>POST /oauth/token</code>) returns one of (CIBA §11):</p>
+<ul>
+<li><code>authorization_pending</code> — not approved yet; keep polling at <code>interval</code>.</li>
+<li><code>slow_down</code> — you polled faster than <code>interval</code>; back off.</li>
+<li><code>access_denied</code> — the user denied the request.</li>
+<li><code>expired_token</code> — the <code>auth_req_id</code> is unknown, lapsed, or already
+  redeemed (it is <strong>single-use</strong>).</li>
+<li><strong>success</strong> — the normal token response (<code>id_token</code> + <code>access_token</code>, plus a
+  refresh token when <code>offline_access</code> was granted). DPoP / mTLS sender-
+  constraining apply if the client used them.</li>
+</ul>
 <h2 id="binding-the-approval-to-an-action">Binding the approval to an action<a class="headerlink" href="#binding-the-approval-to-an-action" title="Permanent link">&para;</a></h2>
 <p>Two optional parameters on the backchannel request let you tie the approval to
 a <em>specific action</em>, not just a login:</p>

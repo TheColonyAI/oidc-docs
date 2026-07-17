@@ -2,126 +2,126 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://oidc.thecolony.ai/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/conformance/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/quickstart/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/sdks/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/flows/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/flows/agent-sso/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/flows/authorization-code/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/flows/ciba/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/flows/delegation/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/flows/device/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/flows/logout/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/flows/refresh/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/reference/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/reference/api/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/reference/discovery/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/reference/errors/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/reference/grant-management/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/reference/organisations/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/reference/scopes-claims/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/reference/shared-signals/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/reference/verifiable-credentials/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/security/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/security/dpop/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/security/jar-jarm/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/security/mtls/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/security/par/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/security/private-key-jwt/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/security/rar/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/security/resource-indicators/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/security/signed-metadata/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
     <url>
          <loc>https://oidc.thecolony.ai/security/step-up/</loc>
-         <lastmod>2026-07-14</lastmod>
+         <lastmod>2026-07-17</lastmod>
     </url>
 </urlset>

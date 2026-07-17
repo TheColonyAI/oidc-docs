@@ -1508,8 +1508,11 @@ provider is expected to offer, for both non-interactive (agent) and interactive
 <li><strong><a href="refresh/">Refresh tokens</a></strong> — long-lived access with rotating refresh tokens.</li>
 <li><strong><a href="logout/">Logout</a></strong> — RP-initiated, back-channel, and front-channel logout.</li>
 </ul>
-<p>Dark/preview flows — <strong>CIBA</strong> (decoupled backchannel auth) and the <strong>Device
-Authorization Grant</strong> — are implemented and will be documented here as they go live.</p>
+<p>For decoupled and input-constrained devices:</p>
+<ul>
+<li><strong><a href="ciba/">CIBA</a></strong> — Client-Initiated Backchannel Authentication (OpenID Connect CIBA Core 1.0, poll mode); the initiator and the approver are different devices.</li>
+<li><strong><a href="device/">Device Authorization Grant</a></strong> — RFC 8628 poll mode, for devices where entering credentials in a browser is impractical.</li>
+</ul>
 
 
 

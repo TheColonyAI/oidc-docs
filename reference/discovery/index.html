@@ -1617,6 +1617,14 @@ capabilities from here rather than hard-coding them.</p>
 <td>Dynamic Client Registration (RFC 7591)</td>
 </tr>
 <tr>
+<td><code>backchannel_authentication_endpoint</code></td>
+<td><a href="../../flows/ciba/">CIBA</a> — decoupled login (poll mode)</td>
+</tr>
+<tr>
+<td><code>device_authorization_endpoint</code></td>
+<td><a href="../../flows/device/">Device Authorization Grant</a> (RFC 8628, poll mode)</td>
+</tr>
+<tr>
 <td><code>signed_metadata</code></td>
 <td><a href="../../security/signed-metadata/">Signed discovery metadata</a> (RFC 8414)</td>
 </tr>
@@ -1628,7 +1636,9 @@ capabilities from here rather than hard-coding them.</p>
 </table>
 <p>Also advertised: <code>scopes_supported</code>, <code>claims_supported</code>, <code>grant_types_supported</code>,
 <code>response_modes_supported</code> (incl. the JARM modes), <code>dpop_signing_alg_values_supported</code>,
-<code>code_challenge_methods_supported</code>, <code>authorization_response_iss_parameter_supported</code>, and the
+<code>code_challenge_methods_supported</code>, <code>authorization_response_iss_parameter_supported</code>,
+<code>backchannel_token_delivery_modes_supported</code> (<code>["poll"]</code>) +
+<code>backchannel_user_code_parameter_supported</code> (<code>false</code>) for CIBA, and the
 FAPI / sender-constraint capability flags.</p>
 <div class="admonition tip">
 <p class="admonition-title">Verify keys, always</p>
